@@ -1,0 +1,35 @@
+{
+  "name": "axii-light-editor",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "a light editor support basic message type(text/image/link)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhou-yg/axii-light-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhou-yg/axii-light-editor/issues"
+  },
+  "homepage": "https://github.com/zhou-yg/axii-light-editor#readme",
+  "dependencies": {
+    "@tiptap/core": "^2.0.0-beta.174",
+    "@tiptap/starter-kit": "^2.0.0-beta.183",
+    "vite": "^2.9.5",
+    "vite-plugin-tips": "^2.1.0"
+  },
+  "peerDependencies": {
+    "axii": "^1.5.5"
+  },
+  "devDependencies": {
+    "axii": "^1.5.5",
+    "less": "^4.1.2"
+  }
+}
