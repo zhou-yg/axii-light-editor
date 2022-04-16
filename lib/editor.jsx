@@ -58,8 +58,6 @@ function EditorFC ({ ref }) {
 
   return (
     <dwEditorContainer block >
-      dw Editor      
-      
       <tipEditor block ref={tipEditorEle} onDragover={e => {
         e.preventDefault()
         e.dataTransfer.dropEffect = 'copy'

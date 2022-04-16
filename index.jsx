@@ -13,9 +13,12 @@ function Index () {
   const output = atom('')
 
   return (
-    <index block block-width="1000px" flex-display style={{ gap: '20px' }} >
-      <Editor ref={editorRef} />
-      <output block block-width="600px" style={{ border: '1px solid #333'}}>
+    <index block block-width="1200px" flex-display style={{ gap: '20px' }} >
+      <leftBox block-width="300px" >
+        left
+        <Editor ref={editorRef} />
+      </leftBox>
+      <output block flex-grow="1" style={{ border: '1px solid #333'}}>
         <button type="button" onClick={() => {
           output.value = JSON.stringify(editorRef.current.editor.getJSON(), null, 2);
         }}>json</button>
@@ -34,6 +37,9 @@ function Index () {
           </code>
         </pre>
       </output>
+      <rightBox block block-width="300px" block-min-height-300 style={{ border: '1px solid #333'}}>
+        right
+      </rightBox>
     </index>
   )
 }
