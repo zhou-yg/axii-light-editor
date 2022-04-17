@@ -2,8 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   '@tiptap/core': ^2.0.0-beta.174
+  '@tiptap/extension-document': ^2.0.0-beta.15
   '@tiptap/extension-image': ^2.0.0-beta.27
   '@tiptap/extension-link': ^2.0.0-beta.36
+  '@tiptap/extension-paragraph': ^2.0.0-beta.23
+  '@tiptap/extension-text': ^2.0.0-beta.15
   '@tiptap/starter-kit': ^2.0.0-beta.183
   axii: ^1.5.5
   less: ^4.1.2
@@ -13,8 +16,11 @@ specifiers:
 
 dependencies:
   '@tiptap/core': 2.0.0-beta.174
+  '@tiptap/extension-document': 2.0.0-beta.15_@tiptap+core@2.0.0-beta.174
   '@tiptap/extension-image': 2.0.0-beta.27_@tiptap+core@2.0.0-beta.174
   '@tiptap/extension-link': 2.0.0-beta.36_@tiptap+core@2.0.0-beta.174
+  '@tiptap/extension-paragraph': 2.0.0-beta.23_@tiptap+core@2.0.0-beta.174
+  '@tiptap/extension-text': 2.0.0-beta.15_@tiptap+core@2.0.0-beta.174
   '@tiptap/starter-kit': 2.0.0-beta.183
   prosemirror-state: 1.3.4
   vite: 2.9.5_less@4.1.2

@@ -7,6 +7,9 @@ const curDirname = dirname(fileURLToPath(import.meta.url))
  * @type {import('vite').UserConfig}
  */
 const config = {
+  server: {
+    port: 3009
+  },
   esbuild: {
     jsxFactory: 'createElement',
     jsxFragment: 'Fragment'
@@ -19,7 +22,7 @@ const config = {
   build: {
     rollupOptions: {
       input: {
-        index: resolve(curDirname, 'index.html'),
+        index: resolve(curDirname, './lib/index.js'),
       },
       output: {
         entryFileNames: '[name].js'

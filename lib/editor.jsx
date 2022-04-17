@@ -6,15 +6,22 @@ import {
   useViewEffect
 } from "axii"
 import { Editor } from '@tiptap/core'
-import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 import './editor.less'
 import IP from './image-paste'
 
-function EditorFC ({ ref }) {
-  const tipEditorEle = useRef()
+export const TIP_EDITOR_ID = 'TIP_EDITOR'
 
+function EditorFC ({
+  onUpdate,
+  ref
+}) {
+  const tipEditorEle = useRef()
   const tipEditor = useRef()
 
   if (ref) {
@@ -29,25 +36,17 @@ function EditorFC ({ ref }) {
     if(tipEditorEle.current) {
       tipEditor.current = new Editor({
         element: tipEditorEle.current,
+        onUpdate,
         extensions: [
           IP,
-          Object.assign(StarterKit, ({
-            options: {
-              italic: false,
-              bold: false,
-              code: false,
-            }
-          })),
           Image,
+          Document,
+          Paragraph,
+          Text,
           Link
         ],
-        content: `
-          <p>hello</p>
-          wo
-          <img src="https://cdn.233.momobako.com/ygopro/pics/21844576.jpg!half" />
-        `
+        content: '123'
       })
-      console.log('tipEditor.current:', tipEditor.current)
       window.tipEditor = tipEditor.current
     }
   })
@@ -57,8 +56,8 @@ function EditorFC ({ ref }) {
   }
 
   return (
-    <dwEditorContainer block >
-      <tipEditor block ref={tipEditorEle} onDragover={e => {
+    <dwEditorContainer block block-width="100%" block-height="100%" >
+      <tipEditor id={TIP_EDITOR_ID} block block-width="100%" block-height="100%" ref={tipEditorEle} onDragover={e => {
         e.preventDefault()
         e.dataTransfer.dropEffect = 'copy'
       }} onDrop={dropImage} > 
@@ -70,7 +69,8 @@ function EditorFC ({ ref }) {
 EditorFC.Style = (frag) => {
   const el = frag.root.elements
   el.tipEditor.style({
-    border: '1px solid #999'
+    border: '1px solid #999',
+    overflowY: 'auto',
   })
 }
 EditorFC.forwardRef = true
