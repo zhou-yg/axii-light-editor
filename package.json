@@ -1,9 +1,9 @@
 {
   "name": "axii-light-editor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "a light editor support basic message type(text/image/link)",
-  "main": "dist/index.js",
+  "main": "dist/axii-light-editor.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
