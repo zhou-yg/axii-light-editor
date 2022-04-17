@@ -38,8 +38,8 @@ function Index () {
           output.value = editorRef.current.editor.getText()
         }}>text</button>
         <button type="button" onClick={() => {
-          output.value = JSON.stringify(editorRef.current.editor.getAttributes(), null, 2);
-        }}>attributes</button>
+          editorRef.current.setContent('')
+        }}>clear content</button>
         <pre>
           <code >
             {() => output.value}

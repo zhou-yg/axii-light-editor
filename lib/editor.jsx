@@ -28,6 +28,9 @@ function EditorFC ({
     ref.current = {
       get editor () {
         return tipEditor.current
+      },
+      setContent (content) {
+        tipEditor.current.commands.setContent(content)
       }
     }
   }
