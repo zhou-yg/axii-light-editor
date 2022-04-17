@@ -1,13 +1,14 @@
 {
   "name": "axii-light-editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "a light editor support basic message type(text/image/link)",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "release": "npm run build && bump --commit \"release: v%s\" --push && pnpm publish --no-git-checks"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "axii": "^1.5.5"
   },
   "devDependencies": {
+    "@jsdevtools/version-bump-prompt": "^6.1.0",
     "axii": "^1.5.5",
     "less": "^4.1.2"
   }
