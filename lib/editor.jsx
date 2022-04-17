@@ -52,6 +52,11 @@ function EditorFC ({
       })
       window.tipEditor = tipEditor.current
     }
+    return () => {
+      if (tipEditorEle.current) {
+        tipEditorEle.current.destroy()
+      }
+    }
   })
 
   function dropImage (e) {
