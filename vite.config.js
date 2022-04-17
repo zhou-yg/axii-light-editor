@@ -25,9 +25,15 @@ const config = {
         index: resolve(curDirname, './lib/index.js'),
       },
       output: {
-        entryFileNames: '[name].js'
+        entryFileNames: '[name].js',
+        globals: {
+          axii: 'Axii'
+        }
       },
-      minified: false
+      minified: false,
+      external: ['axii'],
+      plugins: [
+      ],
     }
   },
   plugins: [
