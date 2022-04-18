@@ -20,16 +20,11 @@ const config = {
     }
   },
   build: {
+    lib: {
+      entry: './lib/index.js',
+      name: 'axii-light-editor'
+    },
     rollupOptions: {
-      input: {
-        index: resolve(curDirname, './lib/index.js'),
-      },
-      output: {
-        entryFileNames: '[name].js',
-        globals: {
-          axii: 'Axii'
-        }
-      },
       minified: false,
       external: ['axii'],
       plugins: [
