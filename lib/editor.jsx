@@ -19,7 +19,8 @@ export const TIP_EDITOR_ID = 'TIP_EDITOR'
 
 function EditorFC ({
   onUpdate,
-  ref
+  ref,
+  defaultContent
 }) {
   const tipEditorEle = useRef()
   const tipEditor = useRef()
@@ -48,7 +49,7 @@ function EditorFC ({
           Text,
           Link
         ],
-        content: '123'
+        content: defaultContent || ''
       })
       window.tipEditor = tipEditor.current
     }
