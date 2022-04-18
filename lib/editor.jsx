@@ -11,6 +11,7 @@ import Link from '@tiptap/extension-link'
 import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
+import Break from '@tiptap/extension-hard-break'
 
 import './editor.less'
 import IP from './image-paste'
@@ -43,6 +44,7 @@ function EditorFC ({
         onUpdate,
         extensions: [
           IP,
+          Break,
           Image,
           Document,
           Paragraph,
