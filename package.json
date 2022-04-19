@@ -1,6 +1,6 @@
 {
   "name": "axii-light-editor",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "description": "a light editor support basic message type(text/image/link)",
   "main": "dist/axii-light-editor.es.js",
