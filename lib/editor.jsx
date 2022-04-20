@@ -18,6 +18,16 @@ import IP from './image-paste'
 
 export const TIP_EDITOR_ID = 'TIP_EDITOR'
 
+export const plugins = () => [
+  IP,
+  Break,
+  Image,
+  Document,
+  Paragraph,
+  Text,
+  Link
+]
+
 function EditorFC ({
   onUpdate,
   ref,
@@ -42,15 +52,7 @@ function EditorFC ({
       tipEditor.current = new Editor({
         element: tipEditorEle.current,
         onUpdate,
-        extensions: [
-          IP,
-          Break,
-          Image,
-          Document,
-          Paragraph,
-          Text,
-          Link
-        ],
+        extensions: plugins(),
         content: defaultContent || ''
       })
       window.tipEditor = tipEditor.current
@@ -63,7 +65,6 @@ function EditorFC ({
   })
 
   function dropImage (e) {
-    console.log('e: ', e);
   }
 
   return (
@@ -80,6 +81,7 @@ function EditorFC ({
 EditorFC.Style = (frag) => {
   const el = frag.root.elements
   el.tipEditor.style({
+    boxSizing: 'border-box',
     border: '1px solid #999',
     overflowY: 'auto',
   })

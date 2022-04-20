@@ -22,7 +22,7 @@ function Index () {
 
   return (
     <index block block-width="1200px" flex-display style={{ gap: '20px' }} >
-      <leftBox block block-width="300px" block-height="500px" >
+      <leftBox block block-width="250px" block-height="160px" >
         left
         <Editor ref={editorRef} onUpdate={() => {
           onUpdate();
