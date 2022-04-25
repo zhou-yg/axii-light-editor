@@ -30,6 +30,8 @@ export const plugins = () => [
 
 function EditorFC ({
   onUpdate,
+  onFocus,
+  onBlur,
   ref,
   defaultContent
 }) {
@@ -52,6 +54,8 @@ function EditorFC ({
       tipEditor.current = new Editor({
         element: tipEditorEle.current,
         onUpdate,
+        onFocus,
+        onBlur,
         extensions: plugins(),
         content: defaultContent || ''
       })

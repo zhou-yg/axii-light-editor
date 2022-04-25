@@ -26,7 +26,7 @@ function Index () {
         left
         <Editor ref={editorRef} onUpdate={() => {
           onUpdate();
-        }} />
+        }} onFocus={() => console.log('focus')} onBlur={() => console.log('blur')}/>
       </leftBox>
       <output block block-max-width="600px" flex-grow="1" style={{ border: '1px solid #333', overflow: 'auto'}}>
         <button type="button" onClick={() => {
